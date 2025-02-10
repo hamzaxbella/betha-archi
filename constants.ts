@@ -106,3 +106,17 @@ export const ProjectDetailsTranslations = {
         fr : 'Catégorie'
     },
 }
+
+export const ContactTranslations = {
+    contactTitle : [
+        {en : 'CONTACT' , fr : "CONTACTEZ" , ar : "تواصل"},
+        {en : "US" , fr : "NOUS" , ar : "معنا"}
+    ],
+    form : {
+        fullname : {en : "Full Name..." , fr : "Nom complet..." , ar : "...الاسم الكامل"},
+        phone : {en : "Phone..." , fr : "Téléphone..." , ar : "...رقم الهاتف"},
+        email : {en : "Email..." , fr : "Email..." , ar : "...البريد الإلكتروني"},
+        message : {en : "Message..." , fr : "Message..." , ar : "...الرسالة"},
+        send : {en : "Send" , fr : "Envoyer" , ar : "إرسال"}
+    }
+}

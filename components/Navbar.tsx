@@ -11,11 +11,11 @@ import TextReveal from "./TextReveal";
 import gsap from "gsap";
 
 const Navbar = () => {
-  const { langauge, setLangauge , direction } = useLangaugeStore();
+  const { langauge, setLangauge, direction } = useLangaugeStore();
   const { isOpen, toggleMenu, closeMenu } = useToggleMenuStore();
   const { currentRoute, setCurrentRoute } = useRouteStore();
   const [isClosing, setIsClosing] = useState(false);
-  
+
   // handle Menu toggle
   const handleMenuToggle = () => {
     if (!isOpen) {
@@ -30,10 +30,9 @@ const Navbar = () => {
     }
   };
 
-
-  const handleLangaugeSwitch = (e : HTMLSelectElement) => {
+  const handleLangaugeSwitch = (e: HTMLSelectElement) => {
     setLangauge(e.value as "en" | "fr" | "ar");
-  }
+  };
 
   useEffect(() => {
     // Reset all underlines initially
@@ -67,10 +66,10 @@ const Navbar = () => {
   }, [isOpen, isClosing]);
 
   return (
-    <nav  className=" flex justify-between items-center p-4 h-[60px]  relative max-container ">
+    <nav className=" flex justify-between items-center p-4 h-[60px]  relative max-container ">
       <ul
         dir={direction}
-        className={`${isOpen ? "fixed left-0 top-0 flex flex-col justify-center z-[1000] bg-white  gap-8 w-screen h-screen" : "hidden"} lg:hidden  md:flex`}
+        className={`${isOpen ? "fixed left-0 top-0 flex flex-col justify-center z-[1000]  bg-white  gap-8 w-screen h-screen" : "hidden"} lg:hidden  md:flex`}
       >
         {NavLinks[langauge].map((link, index) => (
           <li
@@ -92,7 +91,7 @@ const Navbar = () => {
               />
             </Link>
             <span
-              className={`${currentRoute == link.href ? "block active-underline" : "hidden"} absolute bottom-0 ${direction === 'rtl' ? 'right-1' : 'left-1'} w-0 h-[2px] bg-black`}
+              className={`${currentRoute == link.href ? "block active-underline" : "hidden"} absolute bottom-0 ${direction === "rtl" ? "right-1" : "left-1"} w-0 h-[2px] bg-black`}
             ></span>
           </li>
         ))}
@@ -111,17 +110,21 @@ const Navbar = () => {
             <Link
               onClick={() => setCurrentRoute(link.href)}
               href={link.href}
-              className={`${langauge === 'ar' ? 'font-cairo' : 'font-inter'} text-lg font-light ${currentRoute === link.href && 'font-medium'}`}
-
+              className={`${langauge === "ar" ? "font-cairo" : "font-inter"} text-lg font-light ${currentRoute === link.href && "font-medium"}`}
             >
               {link.label}
             </Link>
           </li>
         ))}
       </ul>
-      <h1 className="text-4xl font-light font-playful lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">Logo</h1>
+      <h1 className="text-4xl font-light font-playful lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+        Logo
+      </h1>
       <div className="flex items-center justify-center gap-4">
-        <select className="text-lg font-inter bg-transparent" onChange={(e) => handleLangaugeSwitch(e.target)}>
+        <select
+          className="text-lg font-inter bg-transparent"
+          onChange={(e) => handleLangaugeSwitch(e.target)}
+        >
           <option value="fr">fr</option>
           <option value="ar">ar</option>
           <option value="en">en</option>
@@ -136,9 +139,15 @@ const Navbar = () => {
             alt="burger menu"
           />
         )}
-        <button className="text-white bg-black text-lg font-light rounded-full px-10 py-3 hidden lg:block">
-          <Link href={'/contact'}>Contact</Link>
-        </button>
+        {currentRoute == "/contact" ? (
+          <button className=" bg-none text-black border-black/30 border-[.5px] text-lg font-light rounded-full px-10 py-3 hidden lg:block">
+            <Link href={"/contact"}>Contact</Link>
+          </button>
+        ) : (
+          <button className="text-white bg-black text-lg font-light rounded-full px-10 py-3 hidden lg:block">
+            <Link href={"/contact"}>Contact</Link>
+          </button>
+        )}
       </div>
     </nav>
   );

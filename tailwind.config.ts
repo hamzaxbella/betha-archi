@@ -26,6 +26,9 @@ export default {
         'inter': ['Inter', 'sans-serif'],
         'cairo': ['Cairo', 'sans-serif'],
         'playful': ['Playfair Display', 'serif'],
+      },
+      colors : {
+        'yellowish' : '#FFF0C0'
       }
     },
   },

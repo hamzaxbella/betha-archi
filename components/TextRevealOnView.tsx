@@ -76,7 +76,7 @@ const TextRevealOnView = ({
     <div ref={containerRef} className="flex overflow-hidden gap-[2px]">
       {langauge === "ar" && !linesbreak ? (
         <div className="overflow-hidden">
-          <p className={`${fontSize} letter font-cairo`}>{text}</p>
+          <p className={`${fontSize} h-fit min-h-[120px] letter font-cairo`}>{text}</p>
         </div>
       ) : !linesbreak ? (
         chainedText(text).map((char: string, index: number) => (
