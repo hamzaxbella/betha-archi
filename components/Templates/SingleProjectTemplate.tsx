@@ -77,7 +77,7 @@ const SingleProjectTemplate = ({ project }: SingleProjectTemplateProps) => {
     });
 
     return () => ctx.revert();
-  }, [langauge, isMobile]);
+  }, [langauge, isMobile, project.currentSlug, setCurrentRoute, setSlug]);
 
   // photoswipe gallery
   useEffect(() => {
