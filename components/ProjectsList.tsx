@@ -169,7 +169,6 @@ const ProjectsList = ({homeList , projects}  : ProjectsListProps) => {
           }
         );
 
-        // Ensure proper document height update
         gsap.set(gridRef.current, {
           height: 'auto',
           onComplete: () => {
@@ -180,12 +179,13 @@ const ProjectsList = ({homeList , projects}  : ProjectsListProps) => {
       }
       
       prevProjectsLength.current = displayedProjects.length;
-    }
 
-    return () => {
-      const currentRefs = projectCellsRef.current;
-      gsap.killTweensOf(currentRefs);
-    };
+      // Store refs for cleanup
+      const refsToCleanup = [...currentRefs];
+      return () => {
+        gsap.killTweensOf(refsToCleanup);
+      };
+    }
   }, [displayedProjects, setupHoverAnimations]);
 
   // Update empty check to use filteredProjects

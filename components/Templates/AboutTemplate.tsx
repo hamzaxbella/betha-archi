@@ -40,7 +40,7 @@ const AboutTemplate = ({ data }: { data: AboutDataProps }) => {
   
   useEffect(() => {
     setCurrentRoute('/about')
-  } , [])
+  }, [setCurrentRoute])
 
 
   // Validate data and language availability

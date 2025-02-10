@@ -4,14 +4,14 @@ import { useEffect } from "react"
 import ContactInfo from "@/components/ContactInfo"
 import { useLangaugeStore } from "@/hooks/LanguageStore"
 import ContactForm from "@/components/ContactForm"
-const page = () => {
 
+const Page = () => {
   const {setCurrentRoute} = useRouteStore()
-  const {langauge , font , direction} = useLangaugeStore()
+  const { direction } = useLangaugeStore()
 
   useEffect(() => {
     setCurrentRoute('/contact')
-  } , [])
+  }, [setCurrentRoute])
   
   return (
     <section dir={direction} className="flex flex-col lg:flex-row gap-8 max-container lg:custom-height bg-yellowish padding-y ">
@@ -25,4 +25,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
