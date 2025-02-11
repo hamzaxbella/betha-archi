@@ -217,7 +217,7 @@ const ProjectsList = ({homeList , projects}  : ProjectsListProps) => {
                 width={700}
                 height={700}
               />
-              <div className="overlay absolute inset-0 bg-black/40 opacity-0">
+              <div className="overlay hover-image absolute inset-0 bg-black/40 opacity-0">
                 <div className="flex flex-col gap-4 justify-center items-center h-full text-white">
                   <h2 className="project-title text-4xl font-medium">
                     {shortenTitle(project.title['en'])}

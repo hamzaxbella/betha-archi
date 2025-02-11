@@ -150,7 +150,7 @@ const SingleProjectTemplate = ({ project }: SingleProjectTemplateProps) => {
             return (
               <a
                 key={idx}
-                className="p-4 lg:p-16 group panel relative w-[100vw] lg:w-[50vw] custom-height flex items-center justify-center"
+                className="p-4 hover-image lg:p-16 group panel relative w-[100vw] lg:w-[50vw] custom-height flex items-center justify-center"
                 href={urlFor(image).url()}
                 data-pswp-width={width}
                 data-pswp-height={height}

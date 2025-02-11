@@ -14,12 +14,15 @@ const Page = () => {
   }, [setCurrentRoute])
   
   return (
-    <section dir={direction} className="flex flex-col lg:flex-row gap-8 max-container lg:custom-height bg-yellowish padding-y ">
+    <section dir={direction} className=" bg-yellowish padding-y lg:custom-height flex justify-center items-center">
+      <div className="max-container flex flex-col lg:flex-row justify-between gap-8  ">
+
       <div className="flex-1 flex justify-center items-center">
         <ContactInfo />
       </div>
       <div className="flex-1 flex justify-center items-center ">
         <ContactForm />
+      </div>
       </div>
     </section>
   )

@@ -87,7 +87,7 @@ const AboutTemplate = ({ data }: { data: AboutDataProps }) => {
         </section>
         <hr className="my-24" />
         <section>
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr,auto,1fr] gap-24 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr,auto,1fr] lg:gap-24 relative">
             <div className="flex-1">
               <TextRevealOnView
                 text={aboutContentTranslation.profile[langauge]}

@@ -48,7 +48,7 @@ const HomeTemplate = ({categories , projects} : HomeTemplateProps) => {
 
   return (
     <section>
-      <section className="py-8">
+      <section className="z-10 py-8">
         <div
           ref={containerRef}
           className="w-full h-[450px] overflow-hidden rounded-xl relative"
@@ -64,7 +64,7 @@ const HomeTemplate = ({categories , projects} : HomeTemplateProps) => {
           />
         </div>
         <div className="flex justify-center text-center py-4">
-          <p className={`${langauge === 'ar' && '!font-cairo'} font-playful max-w-[50ch] text-xl leading-8`}>
+          <p className={`${langauge === 'ar' && '!font-cairo'} hover-me font-playful max-w-[50ch] text-xl leading-8`}>
             {heroDescription[langauge]}
           </p>
         </div>
@@ -76,7 +76,7 @@ const HomeTemplate = ({categories , projects} : HomeTemplateProps) => {
 
         <TextRevealOnView 
           text={projectTranslation[langauge]}
-          fontSize="text-4xl "
+          fontSize="text-4xl hover-me"
           from="start" 
         />
 
