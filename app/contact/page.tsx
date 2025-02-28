@@ -15,7 +15,7 @@ const Page = () => {
   
   return (
     <section dir={direction} className=" bg-yellowish padding-y lg:custom-height flex justify-center items-center">
-      <div className="max-container flex flex-col lg:flex-row justify-between gap-8  ">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 min-w-[80%] ">
 
       <div className="flex-1 flex justify-center items-center">
         <ContactInfo />

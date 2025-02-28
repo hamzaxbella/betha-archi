@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import BlurTransition from "@/components/BlurTransition";
 import Smoothscroll from "@/lib/SmoothScroll";
 import Cursor from "@/components/Cursor";
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata: Metadata = {
   title: "Betha Architecture",
@@ -96,6 +97,7 @@ export default function RootLayout({
               {children}
             </Smoothscroll>
           </main>
+          <WhatsAppButton /> {/* Add this line */}
         </div>
       </body>
     </html>

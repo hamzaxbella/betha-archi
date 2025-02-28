@@ -200,10 +200,10 @@ const ProjectsList = ({homeList , projects}  : ProjectsListProps) => {
   
   return (
     <section className="w-full h-full py-10">
-      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 place-items-center gap-10 w-full">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-10 w-full">
         {displayedProjects.map((project, index) => (
           <div 
-            className=" group h-[400px] w-full lg:w-[450px] rounded-3xl overflow-hidden opacity-0" 
+            className=" group h-[400px] w-full lg:max-w-[450px] rounded-3xl overflow-hidden opacity-0" 
             key={project.currentSlug}
             ref={el => {
               if (el) projectCellsRef.current[index] = el;

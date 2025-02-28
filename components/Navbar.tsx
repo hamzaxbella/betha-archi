@@ -69,7 +69,7 @@ const Navbar = () => {
     <nav className=" flex justify-between items-center p-4 h-[60px]  relative max-container ">
       <ul
         dir={direction}
-        className={`${isOpen ? "fixed left-0 top-0 flex flex-col justify-center z-[1000]  bg-white  gap-8 w-screen h-screen" : "hidden"} lg:hidden  md:flex`}
+        className={`${isOpen ? "fixed left-0 top-0 flex flex-col justify-center z-[1000]  bg-white  gap-8 w-screen h-screen" : "hidden"} lg:hidden  flex`}
       >
         {NavLinks[langauge].map((link, index) => (
           <li
