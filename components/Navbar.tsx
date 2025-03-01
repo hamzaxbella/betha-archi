@@ -118,7 +118,7 @@ const Navbar = () => {
         ))}
       </ul>
       <h1 className="text-4xl font-light font-playful lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
-        Logo
+        Selma Atelier
       </h1>
       <div className="flex items-center justify-center gap-4">
         <select
