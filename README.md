@@ -1,38 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Betha Architecture
 
-## Getting Started
+A CMS-driven architecture portfolio with project galleries, filtering, and motion.
 
-First, run the development server:
+[Open the demo](https://betha-archi.vercel.app) · [Browse the code](https://github.com/hamzaxbella/betha-archi)
+
+## What to explore
+
+- Project index, category filtering, and individual project pages.
+- About and contact pages with reusable page templates.
+- Sanity schemas for projects, categories, and about content.
+- GSAP and Framer Motion animation, Lenis scrolling, and PhotoSwipe galleries.
+- Language state for French, English, and Arabic, including RTL direction.
+
+## Stack
+
+Next.js · React · TypeScript · Tailwind CSS · Sanity · GSAP · Zustand
+
+## Run locally
 
 ```bash
+git clone https://github.com/hamzaxbella/betha-archi.git
+cd betha-archi
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000> (or the address printed in the terminal).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Use the build script to generate production output.
 
-## Learn More
+## Configure content and services
 
-To learn more about Next.js, take a look at the following resources:
+The current Sanity connection is defined in `lib/sanity.ts`; the studio lives in `betha-studio/`. For your own installation, point both the frontend and studio configuration at a Sanity project you control, add its schemas/content, and configure the allowed frontend origin. Do not assume access to the original dataset.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cd betha-studio
+npm ci
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The contact form uses EmailJS. Replace its service configuration with your own before enabling real submissions.
 
-## Deploy on Vercel
+## Code map
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`app/` contains routes. `components/Templates/` composes page layouts. `services/` contains CMS queries. `hooks/` manages shared UI state. `betha-studio/schemaTypes/` defines editorial content.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# betha-architecture
-# betha-archi
+This is a portfolio implementation with external content dependencies. Architecture imagery and brand content retain their original ownership.
